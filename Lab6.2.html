@@ -9,14 +9,16 @@
     <script>
         document.write("Описание фитнес-браслета.");
         document.write("<br>");
-        var vremia = new Date();
-        function Braslet(pamiat, platforma, datchiki,) {
+         var vremia = new Date();
+        function Braslet(pamiat, platforma, datchiki, DD, MM, YYYY) {
 
             this.pamiatt = pamiat;
             this.platformaa = platforma;
             this.datchikii = datchiki;
+            this.DDz = DD;
+            this.MMz = MM;
+            this.YYYYz = YYYY;
           
-
             }
         Object.defineProperties(Braslet.prototype, {
             pamiat: {
@@ -42,8 +44,31 @@
                 set: function (datchiki1) {
                     this.datchikii = datchiki1;
                 }
+            },
+            DD: {
+                get: function() {
+                    return this.DDz;
+                },
+                set: function(DD1) {
+                    this.DDz = DD1;
+                }
+            },
+            MM: {
+                get: function() {
+                    return this.MMz;
+                },
+                set: function(MM1) {
+                    this.MMz = MM1;
+                }
+            },
+            YYYY: {
+                get: function() {
+                    return this.YYYYz;
+                },
+                set: function(YYYY1) {
+                    this.YYYYz = YYYY1;
+                }
             }
-            
         });
 
         function Info(obj) {
@@ -53,11 +78,10 @@
             document.write("<br>");
             document.write("Датчики: " + obj.datchiki);
             document.write("<br>");
-            document.write("Дата выхода на рынок: " + this.vremia.toLocaleDateString());
-
+            document.write("Дата выхода на рынок: " + obj.DD + "." + obj.MM + "." + obj.YYYY);
         }
 
-        var Apple = new Braslet(6, "IOS.", "Термометры.");
+        var Apple = new Braslet(6, "IOS.", "Термометры.", 20,04,2023);
         Info(Apple);
 
     </script>
