@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Ревин</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    
+    <script>
+        document.write("Описание фитнес-браслета.");
+        document.write("<br>");
+
+        function Braslet(pamiat, platforma, datchiki) {
+
+            this.pamiatt = pamiat;
+            this.platformaa = platforma;
+            this.datchikii = datchiki;
+            }
+        Object.defineProperties(Braslet.prototype, {
+            pamiat: {
+                get: function () {
+                    return this.pamiatt
+                },
+                set: function (pamiat1) {
+                    this.pamiatt = pamiat1;
+                }
+            },
+            platforma: {
+                get: function () {
+                    return this.platformaa
+                },
+                set: function (platforma1) {
+                    this.platformaa = platforma1;
+                }
+            },
+            datchiki: {
+                get: function () {
+                    return this.datchikii
+                },
+                set: function (datchiki1) {
+                    this.datchikii = datchiki1;
+                }
+            }
+        });
+
+        function Info(obj) {
+            document.write("Память: " + obj.pamiat + " ГБ.");
+            document.write("<br>");
+            document.write("Платформа: " + obj.platforma);
+            document.write("<br>");
+            document.write("Датчики: " + obj.datchiki);
+        }
+
+        var Apple = new Braslet(6, "IOS.", "Термометры.");
+        Info(Apple);
+
+    </script>
+</body>
+</html>
