@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Ревин</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    
+    <script>
+        document.write("Описание фитнес-браслета.");
+        document.write("<br>");
+        function Braslet(pamiat, platforma, datchiki, DD, MM, YYYY) {
+
+            this.pamiatt = pamiat;
+            this.platformaa = platforma;
+            this.datchikii = datchiki;
+            this.DDz = DD;
+            this.MMz = MM;
+            this.YYYYz = YYYY;
+          
+            }
+        Object.defineProperties(Braslet.prototype, {
+            pamiat: {
+                get: function () {
+                    return this.pamiatt
+                },
+                set: function (pamiat1) {
+                    this.pamiatt = pamiat1;
+                }
+            },
+            platforma: {
+                get: function () {
+                    return this.platformaa
+                },
+                set: function (platforma1) {
+                    this.platformaa = platforma1;
+                }
+            },
+            datchiki: {
+                get: function () {
+                    return this.datchikii
+                },
+                set: function (datchiki1) {
+                    this.datchikii = datchiki1;
+                }
+            },
+            DD: {
+                get: function() {
+                    return this.DDz;
+                },
+                set: function(DD1) {
+                    this.DDz = DD1;
+                }
+            },
+            MM: {
+                get: function() {
+                    return this.MMz;
+                },
+                set: function(MM1) {
+                    this.MMz = MM1;
+                }
+            },
+            YYYY: {
+                get: function() {
+                    return this.YYYYz;
+                },
+                set: function(YYYY1) {
+                    this.YYYYz = YYYY1;
+                }
+            }
+        });
+
+        function Info(obj) {
+            document.write("Память: " + obj.pamiat + " ГБ.");
+            document.write("<br>");
+            document.write("Платформа: " + obj.platforma);
+            document.write("<br>");
+            document.write("Датчики: " + obj.datchiki);
+            document.write("<br>");
+            document.write("Дата выхода на рынок: " + obj.DD + "." + obj.MM + "." + obj.YYYY);
+        }
+
+        var Apple = new Braslet(6, "IOS.", "Термометры.", 20,04,2023);
+        Info(Apple);
+
+    </script>
+</body>
+</html>
