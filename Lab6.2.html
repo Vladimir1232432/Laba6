@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Ревин</title>
@@ -9,12 +9,14 @@
     <script>
         document.write("Описание фитнес-браслета.");
         document.write("<br>");
-
-        function Braslet(pamiat, platforma, datchiki) {
+        var vremia = new Date();
+        function Braslet(pamiat, platforma, datchiki,) {
 
             this.pamiatt = pamiat;
             this.platformaa = platforma;
             this.datchikii = datchiki;
+            this.vremia = new Date();
+
             }
         Object.defineProperties(Braslet.prototype, {
             pamiat: {
@@ -41,6 +43,7 @@
                     this.datchikii = datchiki1;
                 }
             }
+            
         });
 
         function Info(obj) {
@@ -49,6 +52,9 @@
             document.write("Платформа: " + obj.platforma);
             document.write("<br>");
             document.write("Датчики: " + obj.datchiki);
+            document.write("<br>");
+            document.write("Дата выхода на рынок: " + this.vremia.toLocaleDateString());
+
         }
 
         var Apple = new Braslet(6, "IOS.", "Термометры.");
